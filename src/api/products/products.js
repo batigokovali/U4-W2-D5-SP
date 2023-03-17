@@ -51,7 +51,7 @@ productsRouter.get("/:productID", async (req, res, next) => {
 productsRouter.put("/:productID", async (req, res, next) => {
     try {
         const updatedProduct = await ProductsModel.findByIdAndUpdate(
-            req, params.productID,
+            req.params.productID,
             req.body,
             { new: true, runValidators: true }
         )
